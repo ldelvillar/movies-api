@@ -40,7 +40,7 @@
             const article = e.target.closest('article')
             const id = article.dataset.id
 
-            fetch(`http://localhost:1234/movies/${id}`, {
+            fetch(`https://movies-api-production-ead1.up.railway.app/movies/${id}`, {
               method: 'DELETE'
             })
               .then(res => {
