@@ -1,10 +1,31 @@
 import express from 'express';
 import crypto from 'node:crypto';
+import cors from 'cors';
 import movies from './movies.json' assert {type: 'json'};
 import { validateMovie, validatePartialMovie } from './schemas/movies.js';
 
 const app = express();
-app.use(express.json()); // middleware to access the request body
+app.use(express.json()); // middleware to access the request body´
+app.use(cors({
+    origin: (origin, callback) => {
+        const ACCEPTED_ORIGINS = [
+            'http://localhost:8080',
+            'http://localhost:1234',
+            'https://movies.com',
+            'https://midu.dev'
+        ]
+  
+        if (ACCEPTED_ORIGINS.includes(origin)) {
+            return callback(null, true)
+        }
+    
+        if (!origin) {
+            return callback(null, true)
+        }
+    
+        return callback(new Error('Not allowed by CORS'))
+    }
+}));
 app.disable('x-powered-by');
 
 app.get('/', (req, res) => {
