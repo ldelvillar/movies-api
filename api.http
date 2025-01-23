@@ -20,9 +20,14 @@ Content-Type: application/json
     "genre": ["Crime", "Drama"]
 }
 
+
+### Borrar una película
+DELETE http://localhost:1234/movies/8fb17ae1-bdfe-45e5-a81-4772d7e526b8
+
 ### Actualizar una película
-PATCH http://localhost:1234/movies/94c34ce0-5a25-4d09-9cb0-aefdd0268cc3
+PATCH http://localhost:1234/movies/6a360a18-c645-4b47-9a7b2a71babbf3e0
 Content-Type: application/json
 
 {
+    "year": 2025
 }
