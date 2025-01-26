@@ -9,7 +9,7 @@ const movieSchema = z.object({
     director: z.string(),
     duration: z.number().int().positive(),
     poster: z.string().url(),
-    genre: z.array(z.enum(['Action', 'Adventure', 'Comedy', 'Drama', 'Terror', 'Sci-Fi', 'Crime'])),
+    genre: z.array(z.enum(['Action', 'Adventure', 'Comedy', 'Drama', 'Terror', 'Sci-Fi', 'Crime', 'Animation', 'Biography'])).min(1, { message: 'At least one genre is required' }),
     rate: z.number().min(0).max(10).default(5),
 });
 

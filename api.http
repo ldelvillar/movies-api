@@ -2,8 +2,7 @@
 GET http://localhost:1234/movies
 
 ### Recuperar una película por su ID
-GET http://localhost:1234/movies/dcdd0fad-a94c-4810-8acc-5f108d3b18c3
-
+GET http://localhost:1234/movies/2f7cb8f0-dc00-11ef-8b25-cf14f8ee4e9
 ### Recuperar todas las películas por su género
 GET http://localhost:1234/movies/?genre=action
 
@@ -17,17 +16,20 @@ Content-Type: application/json
     "director": "Francis Ford Coppola",
     "duration": 175,
     "poster": "https://img.fruugo.com/product/4/49/14441494_max.jpg",
-    "genre": ["Crime", "Drama"]
+    "genre": ["Crime", "Drama"],
+    "rate": 9.5
 }
 
 
 ### Borrar una película
-DELETE http://localhost:1234/movies/8fb17ae1-bdfe-45e5-a81-4772d7e526b8
+DELETE http://localhost:1234/movies/237c8f-dc00-11ef-8b25-cf14f48eeae9
 
 ### Actualizar una película
-PATCH http://localhost:1234/movies/6a360a18-c645-4b47-9a7b2a71babbf3e0
+PATCH http://localhost:1234/movies/87e8afa5-dc09-11ef-8b25-cf14f48eeae9
 Content-Type: application/json
 
 {
-    "year": 2025
+    "title": "dfvsdvds",
+    "year": 2025,
+    "rate": 7
 }
